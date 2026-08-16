@@ -1,0 +1,54 @@
+apiVersion: v1
+entries:
+  ppsspp:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: Initial release of the PPSSPP Helm chart
+        - kind: added
+          description: GPU passthrough for both Intel/AMD (VA-API via /dev/dri) and NVIDIA (via the NVIDIA Kubernetes device plugin, gpu.vendor=nvidia)
+        - kind: added
+          description: seccompUnconfined and a 2Gi default shmSize, both carried over from this chart's sibling pcsx2-helm-chart after PCSX2's JIT recompiler was found to crash with SIGBUS under Docker/Kubernetes' default seccomp/shm limits - not independently confirmed on PPSSPP, but the same base image/toolchain makes it a likely fix if you hit the same crash
+        - kind: added
+          description: streaming.enabled/streaming.brokerPort in values.yaml, kept only so the chart's shape matches its siblings. WARNING - no RomM broker mod exists for PPSSPP at all (github.com/LoneAngelFayt/ppsspp-romm-integration is an empty placeholder, not even a "dev" tag) - there is nothing to enable yet
+      artifacthub.io/license: MIT
+      artifacthub.io/links: |
+        - name: Helm Repository
+          url: https://henriqzimer.github.io/ppsspp-helm-chart/
+        - name: Chart Source
+          url: https://github.com/HenriqZimer/ppsspp-helm-chart
+        - name: Maintainer Website
+          url: https://henriqzimer.com.br
+        - name: GitHub Profile
+          url: https://github.com/HenriqZimer
+        - name: linuxserver.io PPSSPP Image
+          url: https://docs.linuxserver.io/images/docker-ppsspp/
+        - name: Documentation
+          url: https://github.com/HenriqZimer/ppsspp-helm-chart/blob/main/chart/README.md
+    apiVersion: v2
+    appVersion: latest
+    created: "2026-08-16T01:00:32.900066934Z"
+    description: A Helm chart for PPSSPP - the linuxserver.io PSP emulator KasmVNC
+      webtop image
+    digest: 84cf2dcea09ddc41dfb5e28dcf329415c9bdd487695174a8f4db9d72e8d3e5fe
+    home: https://docs.linuxserver.io/images/docker-ppsspp/
+    keywords:
+    - ppsspp
+    - emulator
+    - psp
+    - retrogaming
+    - kasmvnc
+    - linuxserver
+    maintainers:
+    - email: henrique.zimermann@outlook.com
+      name: HenriqZimer
+      url: https://henriqzimer.com.br
+    name: ppsspp
+    sources:
+    - https://github.com/linuxserver/docker-ppsspp
+    - https://github.com/HenriqZimer/ppsspp-helm-chart
+    type: application
+    urls:
+    - https://henriqzimer.github.io/ppsspp-helm-chart/ppsspp-1.0.0.tgz
+    version: 1.0.0
+generated: "2026-08-16T01:00:32.898710954Z"
