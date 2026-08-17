@@ -1,0 +1,88 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: added
+      description: Chart releases are now signed (helm package --sign) - see artifacthub.io/signKey for the public key location and fingerprint, powers the "Signed" badge on ArtifactHub
+  artifacthub.io/changesHistory: |
+    - version: 1.0.2
+      changes:
+        - kind: added
+          description: values.schema.json - validates values.yaml against a JSON Schema, and is what powers the "Values schema" feature/badge on ArtifactHub (previously absent)
+    - version: 1.0.1
+      changes:
+        - kind: added
+          description: icon, previously missing entirely - pointed at linuxserver.io's own logo image for this app, which is why no image was ever showing on ArtifactHub
+    - version: 1.0.0
+      changes:
+        - kind: added
+          description: Initial release of the PPSSPP Helm chart
+        - kind: added
+          description: GPU passthrough for both Intel/AMD (VA-API via /dev/dri) and NVIDIA (via the NVIDIA Kubernetes device plugin, gpu.vendor=nvidia)
+        - kind: added
+          description: seccompUnconfined and a 2Gi default shmSize, both carried over from this chart's sibling pcsx2-helm-chart after PCSX2's JIT recompiler was found to crash with SIGBUS under Docker/Kubernetes' default seccomp/shm limits - not independently confirmed on PPSSPP, but the same base image/toolchain makes it a likely fix if you hit the same crash
+        - kind: added
+          description: streaming.enabled/streaming.brokerPort in values.yaml, kept only so the chart's shape matches its siblings. WARNING - no RomM broker mod exists for PPSSPP at all (github.com/LoneAngelFayt/ppsspp-romm-integration is an empty placeholder, not even a "dev" tag) - there is nothing to enable yet
+  artifacthub.io/license: MIT
+  artifacthub.io/links: |
+    - name: Helm Repository
+      url: https://henriqzimer.github.io/ppsspp-helm-chart/
+    - name: Chart Source
+      url: https://github.com/HenriqZimer/ppsspp-helm-chart
+    - name: Maintainer Website
+      url: https://henriqzimer.com.br
+    - name: GitHub Profile
+      url: https://github.com/HenriqZimer
+    - name: linuxserver.io PPSSPP Image
+      url: https://docs.linuxserver.io/images/docker-ppsspp/
+    - name: Documentation
+      url: https://github.com/HenriqZimer/ppsspp-helm-chart/blob/main/chart/README.md
+  artifacthub.io/signKey: |
+    fingerprint: C2E2E16693F2715BA0B23913BF94E5067859562F
+    url: https://henriqzimer.github.io/ppsspp-helm-chart/HenriqZimer-helm-charts-public.asc
+apiVersion: v2
+appVersion: latest
+description: A Helm chart for PPSSPP - the linuxserver.io PSP emulator KasmVNC webtop
+  image
+home: https://docs.linuxserver.io/images/docker-ppsspp/
+icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/ppsspp-logo.png
+keywords:
+- - ppsspp
+- - emulator
+- - psp
+- - retrogaming
+- - kasmvnc
+- - linuxserver
+maintainers:
+- - email: henrique.zimermann@outlook.com
+  name: HenriqZimer
+  url: https://henriqzimer.com.br
+name: ppsspp
+sources:
+- - https://github.com/linuxserver/docker-ppsspp
+- - https://github.com/HenriqZimer/ppsspp-helm-chart
+type: application
+version: 1.0.3
+
+...
+files:
+  ppsspp-1.0.3.tgz: sha256:810c4608670693f48d8bb1c7c91c23efcdcf613cd69903bfa2ca80357c91387c
+
+-----BEGIN PGP SIGNATURE-----
+
+wsG5BAEBCgBtBYJqgvE0CRC/lOUGeFlWL0UUAAAAAAAcACBzYWx0QG5vdGF0aW9u
+cy5vcGVucGdwanMub3Jnq58wKwUkv0EHkWOzKLAOteO3pwnD67BdW9JDoFqeYmEW
+IQTC4uFmk/JxW6CyORO/lOUGeFlWLwAAo/YP/j6kNZRWN2kcJbCHPb3u/Lux3P7j
+Zxf0ETPo7+WjmC/GxN0g5UiYQCq2sE814faqh7qyVmiAreWDL+kmf5/qPXaj2hGe
+w56mViOcbEusG4GyvlinKmYeLqAVsCfZZReuO2rf0qBap8bpEZGbhfh8Oy+NTEx0
+3DpnDCts34XL5Z2/hvEoNCuc1mqfSRZ4OKNX4fXjGKYy8jirY/tF5IJ3P18/OXkc
+Jy/k+HhIhwNuckVq0Wwz1khLoKg3qBMJ9pf+bRR1FBp51XI7GGi1UR7ENqfTtlIi
+AatKB0RBH1bXGKDX6NO6hdtlF8mJpdHYMVYNDwIHbf38XmGnw2WciLGylKbcwwKU
+++m09JSBFv5XGw0GhX4vi0mLANWWBZ4Hfc2b1q6UMD+es+hnYHVgZ5ehNmCTsbun
+YpXsEOkFkYH9d3ScmwjOCPCqMQJLnEXtZEfvKcmBQW76VHN0EaJb186AEgcl0CB6
+tnfmqz+NaUY/i8GI07xme6s74mk2dSqlGs29/s9Rul5YLpHVfNaPYV9HrhFKD5Yq
+ZnraLSSVqwSTcH/xvNmE8PRQacSD2mzaapcAXgZOw+gaf+XQ8JOGZI1K1gFr0Dc7
+cU5yRnx6O6XrQeJKJiLI1sAAT3SDqdzRCdn3mZWbgjrqpSi3K911Q1HdKLz/1Lxu
+c3EXbAGplzFHZy/b
+-----END PGP SIGNATURE-----
