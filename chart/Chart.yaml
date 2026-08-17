@@ -2,8 +2,9 @@ apiVersion: v2
 name: ppsspp
 description: A Helm chart for PPSSPP - the linuxserver.io PSP emulator KasmVNC webtop image
 type: application
-version: 1.0.0
+version: 1.0.1
 appVersion: "latest"
+icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/ppsspp-logo.png
 keywords:
   - ppsspp
   - emulator
@@ -36,10 +37,15 @@ annotations:
       url: https://github.com/HenriqZimer/ppsspp-helm-chart/blob/main/chart/README.md
   artifacthub.io/changes: |
     - kind: added
-      description: Initial release of the PPSSPP Helm chart
-    - kind: added
-      description: GPU passthrough for both Intel/AMD (VA-API via /dev/dri) and NVIDIA (via the NVIDIA Kubernetes device plugin, gpu.vendor=nvidia)
-    - kind: added
-      description: seccompUnconfined and a 2Gi default shmSize, both carried over from this chart's sibling pcsx2-helm-chart after PCSX2's JIT recompiler was found to crash with SIGBUS under Docker/Kubernetes' default seccomp/shm limits - not independently confirmed on PPSSPP, but the same base image/toolchain makes it a likely fix if you hit the same crash
-    - kind: added
-      description: streaming.enabled/streaming.brokerPort in values.yaml, kept only so the chart's shape matches its siblings. WARNING - no RomM broker mod exists for PPSSPP at all (github.com/LoneAngelFayt/ppsspp-romm-integration is an empty placeholder, not even a "dev" tag) - there is nothing to enable yet
+      description: icon, previously missing entirely - pointed at linuxserver.io's own logo image for this app, which is why no image was ever showing on ArtifactHub
+  artifacthub.io/changesHistory: |
+    - version: 1.0.0
+      changes:
+        - kind: added
+          description: Initial release of the PPSSPP Helm chart
+        - kind: added
+          description: GPU passthrough for both Intel/AMD (VA-API via /dev/dri) and NVIDIA (via the NVIDIA Kubernetes device plugin, gpu.vendor=nvidia)
+        - kind: added
+          description: seccompUnconfined and a 2Gi default shmSize, both carried over from this chart's sibling pcsx2-helm-chart after PCSX2's JIT recompiler was found to crash with SIGBUS under Docker/Kubernetes' default seccomp/shm limits - not independently confirmed on PPSSPP, but the same base image/toolchain makes it a likely fix if you hit the same crash
+        - kind: added
+          description: streaming.enabled/streaming.brokerPort in values.yaml, kept only so the chart's shape matches its siblings. WARNING - no RomM broker mod exists for PPSSPP at all (github.com/LoneAngelFayt/ppsspp-romm-integration is an empty placeholder, not even a "dev" tag) - there is nothing to enable yet
