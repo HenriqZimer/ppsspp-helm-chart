@@ -1,6 +1,10 @@
 # PPSSPP Helm Chart
 
-[![Version: 1.0.3](https://img.shields.io/badge/Version-1.0.3-informational?style=flat-square)](https://github.com/HenriqZimer/ppsspp-helm-chart)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/ppsspp-logo.png" alt="PPSSPP logo" width="140" />
+</p>
+
+[![Version: 1.0.4](https://img.shields.io/badge/Version-1.0.4-informational?style=flat-square)](https://github.com/HenriqZimer/ppsspp-helm-chart)
 [![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)](https://docs.linuxserver.io/images/docker-ppsspp/)
 
 A Helm chart for [PPSSPP](https://docs.linuxserver.io/images/docker-ppsspp/) - the linuxserver.io
@@ -46,7 +50,7 @@ git clone https://github.com/HenriqZimer/ppsspp-helm-chart.git
 cd ppsspp-helm-chart
 
 helm package chart/
-helm install ppsspp ./ppsspp-1.0.3.tgz
+helm install ppsspp ./ppsspp-1.0.4.tgz
 ```
 
 ## Configuration
