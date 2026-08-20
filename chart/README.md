@@ -4,7 +4,7 @@
   <img src="https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/ppsspp-logo.png" alt="PPSSPP logo" width="140" />
 </p>
 
-[![Version: 1.0.4](https://img.shields.io/badge/Version-1.0.4-informational?style=flat-square)](https://github.com/HenriqZimer/ppsspp-helm-chart)
+[![Version: 1.0.5](https://img.shields.io/badge/Version-1.0.5-informational?style=flat-square)](https://github.com/HenriqZimer/ppsspp-helm-chart)
 [![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)](https://docs.linuxserver.io/images/docker-ppsspp/)
 
 A Helm chart for [PPSSPP](https://docs.linuxserver.io/images/docker-ppsspp/) - the linuxserver.io
@@ -14,11 +14,11 @@ PlayStation Portable emulator, served as a full desktop over the browser via Kas
 
 ```bash
 # Add the Helm repository
-helm repo add ppsspp https://henriqzimer.github.io/ppsspp-helm-chart
+helm repo add ppsspp-helm-chart https://henriqzimer.github.io/ppsspp-helm-chart/
 helm repo update
 
 # Install PPSSPP
-helm install ppsspp ppsspp/ppsspp
+helm install my-ppsspp ppsspp-helm-chart/ppsspp --version 1.0.5
 ```
 
 ## Prerequisites
@@ -37,10 +37,10 @@ helm install ppsspp ppsspp/ppsspp
 ### From Helm Repository
 
 ```bash
-helm repo add ppsspp https://henriqzimer.github.io/ppsspp-helm-chart
+helm repo add ppsspp-helm-chart https://henriqzimer.github.io/ppsspp-helm-chart/
 helm repo update
 
-helm install ppsspp ppsspp/ppsspp
+helm install my-ppsspp ppsspp-helm-chart/ppsspp --version 1.0.5
 ```
 
 ### From Source
@@ -50,7 +50,7 @@ git clone https://github.com/HenriqZimer/ppsspp-helm-chart.git
 cd ppsspp-helm-chart
 
 helm package chart/
-helm install ppsspp ./ppsspp-1.0.4.tgz
+helm install my-ppsspp ./ppsspp-1.0.5.tgz
 ```
 
 ## Configuration

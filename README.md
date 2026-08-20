@@ -28,14 +28,14 @@ your network:
 ### Add Helm Repository
 
 ```bash
-helm repo add ppsspp https://henriqzimer.github.io/ppsspp-helm-chart/
+helm repo add ppsspp-helm-chart https://henriqzimer.github.io/ppsspp-helm-chart/
 helm repo update
 ```
 
 ### Install Chart
 
 ```bash
-helm install ppsspp ppsspp/ppsspp
+helm install my-ppsspp ppsspp-helm-chart/ppsspp --version 1.0.5
 ```
 
 For detailed installation instructions and configuration options, see the [chart README](chart/README.md).
