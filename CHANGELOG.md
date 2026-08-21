@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-08-21
+
+### Added
+- `sunshine.*` (POC) - Sunshine/Moonlight low-latency game streaming as an alternative to the
+  default KasmVNC streaming. Requires a Docker Mod (`ghcr.io/henriqzimer/ppsspp-sunshine-mod`)
+  that installs Sunshine and swaps the base image's Xvfb for a real Xorg + "dummy" driver - Xvfb
+  in this image is not linked against libudev, so it never hotplugs the mouse/keyboard/gamepad
+  devices Sunshine creates via `/dev/uinput`. Also requires `sunshine.hostNetwork`/
+  `sunshine.privileged` (`hostNetwork` because Moonlight talks raw TCP+UDP that can't go through
+  the Ingress, and because uinput hotplug uevents need the node's network namespace to reach udev;
+  `privileged` because Kubernetes has no native knob for the custom `/dev/input/eventN` device
+  cgroup rule Sunshine needs) and `PIXELFLUX_WAYLAND=false` in `env` (the image defaults to a
+  Wayland compositor, which Sunshine can't capture). `sunshine.port` defaults to `48789`, chosen
+  to avoid colliding with sibling emulator charts' own Sunshine base ports when run with
+  `hostNetwork` on the same node.
+
 ## [1.0.5] - 2026-08-17
 
 ### Fixed
