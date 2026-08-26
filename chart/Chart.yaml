@@ -2,7 +2,7 @@ apiVersion: v2
 name: ppsspp
 description: A Helm chart for PPSSPP - the linuxserver.io PSP emulator KasmVNC webtop image
 type: application
-version: 1.3.3
+version: 1.3.4
 appVersion: "latest"
 icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/ppsspp-logo.png
 keywords:
