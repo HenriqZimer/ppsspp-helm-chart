@@ -65,7 +65,7 @@
         },
         "tag": {
           "type": "string",
-          "default": "latest"
+          "default": "1.20.4-4-ls42"
         },
         "pullPolicy": {
           "type": "string",
